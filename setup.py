@@ -1,8 +1,5 @@
 from setuptools import setup
 
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
-
 with open('README.md') as f:
     description = f.read()
 
@@ -16,7 +13,7 @@ setup(
     author_email='tasptz@gmail.com',
     url='https://github.com/tasptz/pytorch-stochastic-depth',
     packages=['stochdepth'],
-    install_requires=requirements,
     license='MIT',
-    platforms=['any']
+    platforms=['any'],
+    install_requires=['torch>=1.8', 'torchvision>=0.9']
 )
