@@ -5,7 +5,7 @@ deploy:
   provider: pypi
   user: "__token__"
   password:
-    secure: "pypi-AgEIcHlwaS5vcmcCJGU1MzUxYzY3LTRiNTItNDNkMC05NDdjLTEwYTk5ODRmZWUyMgACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgHmVZIFr5l_bXk1qGNLHWoafSrNzN71XWpEBjjOwh-yE"
+    secure: "pypi-AgEIcHlwaS5vcmcCJDk3OWI0NmFlLTgyZWItNGZmMy1hNjg0LTYwN2ZiODNmMTE5YwACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgkp-_tQxVPRYY5GdO9TL69mgLZeZ32PqnGv4NtdEqer4"
   distributions: "sdist"
   skip_existing: true
 branches:
