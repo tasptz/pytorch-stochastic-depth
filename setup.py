@@ -3,7 +3,7 @@ from setuptools import setup
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-with open('ReadMe.md') as f:
+with open('README.md') as f:
     description = f.read()
 
 setup(
