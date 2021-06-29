@@ -1,4 +1,4 @@
-# Stochastic Depth with PyTorch Hooks
+# Stochastic Depth with PyTorch Hooks ![Travis CI build status](https://travis-ci.com/tasptz/pytorch-stochastic-depth.svg?branch=master) [![PyPI version](https://badge.fury.io/py/stochdepth.svg)](https://badge.fury.io/py/stochdepth)
 A simple [hook](https://pytorch.org/docs/stable/generated/torch.nn.modules.module.register_module_forward_hook.html) based implementation of [Deep Networks with Stochastic Depth](https://arxiv.org/abs/1603.09382) for [torchvision resnets](https://pytorch.org/vision/stable/_modules/torchvision/models/resnet.html).
 # Example
 ```python
