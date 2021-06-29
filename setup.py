@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='stochdepth',
-    version='0.1.0',
+    version='0.1.1',
     description='A simple hook based implementation of "Deep Networks with Stochastic Depth" for torchvision resnets.',
     long_description=description,
     long_description_content_type='text/markdown',
