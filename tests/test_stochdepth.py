@@ -40,7 +40,7 @@ def test_drop_basicblock_eval():
     basic_block = resnet.layer1[0]
     assert isinstance(basic_block, BasicBlock)
     x = _input()
-    y = basic_block(x)
+    y = relu(x)
     register_forward_hooks(resnet, p=1.)
     assert torch.allclose(y, basic_block(x))
 
@@ -76,6 +76,6 @@ def test_drop_bottleneck_eval():
     bottleneck = resnet.layer1[0]
     assert isinstance(bottleneck, Bottleneck)
     x = _input()
-    y = bottleneck(x)
+    y = relu(bottleneck.downsample(x))
     register_forward_hooks(resnet, p=1.)
     assert torch.allclose(y, bottleneck(x))
