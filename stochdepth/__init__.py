@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+from torch.nn.functional import relu
 from torch.distributions.bernoulli import Bernoulli
 from torchvision.models import resnet
 
@@ -8,7 +9,7 @@ def _forward_hook(p):
     def f(module: nn.Module, x, _y):
         if module.training and distribution.sample():
             # drop
-            return module.relu(*x) if module.downsample is None else module.relu(module.downsample(*x))
+            return relu(*x) if module.downsample is None else relu(module.downsample(*x))
     return f
 
 def set_hooks(module: nn.Module, p=0., target_types=None) -> nn.Module:
