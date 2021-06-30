@@ -12,14 +12,12 @@ def _forward_hook(p):
             return relu(*x) if module.downsample is None else relu(module.downsample(*x))
     return f
 
-def set_hooks(module: nn.Module, p=0., target_types=None) -> nn.Module:
+def register_forward_hooks(module: nn.Module, p=0., target_types=None) -> nn.Module:
     if target_types is None:
         target_types = resnet.BasicBlock, resnet.Bottleneck
     if isinstance(module, target_types):
-        module.register_forward_hook(_forward_hook(p))
+        return [module.register_forward_hook(_forward_hook(p))]
     else:
-        for m in module.modules():
-            if isinstance(m, target_types):
-                m.register_forward_hook(_forward_hook(p))
+        return [m.register_forward_hook(_forward_hook(p)) for m in module.modules() if isinstance(m, target_types)]
 
-__all__ = [set_hooks]
+__all__ = [register_forward_hooks]
